@@ -1,6 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication,QVBoxLayout,QWidget,QPushButton,QGroupBox,QMainWindow
-from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication,QVBoxLayout,QWidget,QPushButton
 class MyWindow(QWidget):
     def __init__(self):
         #一定要调用父类的__Init__
