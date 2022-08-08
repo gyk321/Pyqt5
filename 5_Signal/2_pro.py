@@ -27,7 +27,7 @@ class MyWindow(QWidget):
         scroll.setWidget(self.msg)
         # 创建垂直布局器,用来添加自动滚动条
         v_layout = QVBoxLayout()
-        v_layout.addWidget(scroll)
+        v_layout.addWidget(scroll) # 自动滚动条
         # 创建水平布局器
         h_layout = QHBoxLayout()
         btn = QPushButton("开始检测",self)
@@ -51,8 +51,12 @@ class MyWindow(QWidget):
     def check(self):
         for i,ip in enumerate(["192.168.1.%d"% x for x in range(1,255)]):
             msg = "模拟,正在检查 %s 上的漏洞...." % ip
+            # 打印所有信号
+            # print(msg)
+            # 打印带漏洞的信号
             if i % 5 == 3:
-                self.my_signal.emit(msg + "[发现漏洞]")
+                # 表示发射信号 对象.信号.发射(参数)
+                self.my_signal.emit(msg + "[发现漏洞]") #相当于调用了 my_slot 函数
             time.sleep(0.01)
 
 if __name__ == '__main__':
